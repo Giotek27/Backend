@@ -2,11 +2,11 @@ let mongoose=require("mongoose");
 let bodyParser=require("body-parser");
 let cors=require("cors");
 let express=require("express");
-require("dotenv").config();
+const port=require("dotenv").config();
 
 mongoose.Promise=global.Promise;
 mongoose.connect(
-    process.env.mongoUrl,
+    port,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
@@ -25,4 +25,5 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(cors());
 const vendorapi=require("./routes/vendedoroute");
 app.use("",vendorapi);
+
 const server=app.listen(2704,()=> console.log("Connected on port 2704"));
