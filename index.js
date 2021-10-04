@@ -2,11 +2,11 @@ let mongoose=require("mongoose");
 let bodyParser=require("body-parser");
 let cors=require("cors");
 let express=require("express");
-const port=require("dotenv").config();
+require("dotenv").config();
 
 mongoose.Promise=global.Promise;
 mongoose.connect(
-    port,
+    process.env.mongoUrl,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true
