@@ -47,7 +47,7 @@ vendedoroute.route("/actualizarVendedorN/:id").put((req,res)=>{ //Para actualiza
 
 });
 vendedoroute.route("/actualizarVendedorJ/:id").put((req,res)=>{ //Para actualizar un nuevo vendedor
-    modeloVendedor.findByIdAndUpdate(req.params.id,{$set:req.body},(error,data)=>res.json(data)); 
+    modeloVendedor2.findByIdAndUpdate(req.params.id,{$set:req.body},(error,data)=>res.json(data)); 
 
 });
 module.exports=vendedoroute;
