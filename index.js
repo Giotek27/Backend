@@ -23,7 +23,16 @@ const app=express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(cors());
+app.use((req,res,next)=>{
+    res.header("Access-Control-Allow-Origin","*");
+    res.header("Access-Control-Allow-Headers","Origin, X-Requested-With, Content-Type, Accept");
+    res.header("Access-Control-Allow-Methods","GET, POST, PUT, DELETE, OPTIONS");
+    res.header('Allow','GET, POST, OPTIONS, PUT, DELETE');
+    next();
+});
+
+
 const vendorapi=require("./routes/vendedoroute");
 app.use("",vendorapi);
 
-const server=app.listen(2704,()=> console.log("Connected on port 2704"));
+const server=app.listen(process.env.mongoUrl,()=> console.log("Connected on port "));
