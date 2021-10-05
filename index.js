@@ -35,4 +35,4 @@ app.use((req,res,next)=>{
 const vendorapi=require("./routes/vendedoroute");
 app.use("",vendorapi);
 
-const server=app.listen(process.env.mongoUrl,()=> console.log("Connected on port "));
+const server=app.listen(2704,()=> console.log("Connected on port 2704"));
