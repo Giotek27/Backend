@@ -35,4 +35,6 @@ app.use((req,res,next)=>{
 const vendorapi=require("./routes/vendedoroute");
 app.use("",vendorapi);
 
-const server=app.listen(2704,()=> console.log("Connected on port 2704"));
+const server=app.listen(process.env.PORT || function(){
+    console.log("Servidor iniciado en el puerto: ",this.address().port, app.settings.env);
+});
