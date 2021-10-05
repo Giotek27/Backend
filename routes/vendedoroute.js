@@ -3,7 +3,7 @@ let modeloVendedor=require("../models/vendedor")//se importa el archivo que tien
 let modeloVendedor2=require("../models/vendedorjuridico")
 let vendedoroute=express.Router();
 
-//vendedoroute.route("/vendedor").get((req,res)=>res.send("Hola Vendedor"));
+vendedoroute.route("/vendedor").get((req,res)=>res.send("Hola Vendedor"));
 //buscar por todos los vendedores
 vendedoroute.route("/vendedorConsulta").get((req,res)=>{
     modeloVendedor.find((error,data)=>res.json(data)).catch(error=>res.send(error));; 
