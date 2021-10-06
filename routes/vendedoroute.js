@@ -22,6 +22,10 @@ vendedoroute.route("/buscavendedornombre/:nombre").get((req,res)=>{
     modeloVendedor.findOne({nombre:req.params.nombre},(error,data)=>res.json(data)); 
 
 });
+vendedoroute.route("/buscavendedornombre/:nombre").get((req,res)=>{
+    modeloVendedor2.findOne({nombre:req.params.nombre},(error,data)=>res.json(data)); 
+
+});
 vendedoroute.route("/buscavendedorJuridico/:id").get((req,res)=>{
     modeloVendedor2.findById(req.params.id,(error,data)=>res.json(data)); 
 });
