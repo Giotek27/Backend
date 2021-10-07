@@ -22,7 +22,7 @@ vendedoroute.route("/buscavendedornombre/:nombre").get((req,res)=>{
     modeloVendedor.findOne({nombre:req.params.nombre},(error,data)=>res.json(data)); 
 
 });
-vendedoroute.route("/buscavendedornombre/:nombre").get((req,res)=>{
+vendedoroute.route("/buscavendedornombrejuridico/:nombre").get((req,res)=>{
     modeloVendedor2.findOne({nombre:req.params.nombre},(error,data)=>res.json(data)); 
 
 });
