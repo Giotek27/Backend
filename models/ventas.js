@@ -10,7 +10,7 @@ const VendedorNaturalSchema=new Schema({
     Tipo_plastic:{type:String,required:[true,'El campo es obligatorio']},
     estado_plastic:{type:String,required:[true,'El campo es obligatorio']},
     cantidad_plastic:{type:Number,required:[true,'El campo es obligatorio']},
-    forma_pago:{type:Number,required:[true,'El campo es obligatorio']},
+    forma_pago:{type:String,required:[true,'El campo es obligatorio']},
     Date:{type:Date,default:Date.now}
 });
 
