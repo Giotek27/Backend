@@ -5,6 +5,7 @@ const VendedorNaturalSchema=new Schema({
     apellido:{type:String,required:[true,'El campo es obligatorio']},
     Nit:{type:Number,required:[true,'El campo es obligatorio']},
     telefono:{type:Number,required:[true,'El campo es obligatorio']},
+    correo:{type:String,required:[true,'El campo es obligatorio']},
     direccion:{type:String,required:[true,'El campo es obligatorio']},
     ciudad:{type:String,required:[true,'El campo es obligatorio']},
     Tipo_plastic:{type:String,required:[true,'El campo es obligatorio']},
