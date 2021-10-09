@@ -73,7 +73,7 @@ vendedoroute.route("/buscaservicios/:nombre").get((req,res)=>{
     modeloVendedor3.find({nombre:req.params.nombre},(error,data)=>res.json(data)); 
 
 });
-vendedoroute.route("/buscaservicios/:id").get((req,res)=>{
+vendedoroute.route("/buscarservicios/:id").get((req,res)=>{
     modeloVendedor3.findById(req.params.id,(error,data)=>res.json(data)); 
 });
 //crear
