@@ -1,8 +1,9 @@
 let express=require("express");
 let modeloVendedor=require("../models/vendedor")//se importa el archivo que tiene el modelo
 let modeloVendedor2=require("../models/vendedorjuridico")
-let modeloVendedor3=require("../models/Servicios")
-let modeloVendedor4=require("../models/ventas")
+let Servicios=require("../models/Servicios")
+let Ventas=require("../models/ventas")
+let usuarios=require("../models/Users")
 let vendedoroute=express.Router();
 
 vendedoroute.route("/vendedor").get((req,res)=>res.send("Hola Vendedor"));
@@ -63,61 +64,86 @@ vendedoroute.route("/actualizarVendedorJ/:id").put((req,res)=>{ //Para actualiza
     modeloVendedor2.findByIdAndUpdate(req.params.id,{$set:req.body},(error,data)=>res.json(data)); 
 
 });
-//---------------------------modeloVendedor3--------------------
+//---------------------------Servicios--------------------
 // consultar
 vendedoroute.route("/consultarservicios").get((req,res)=>{
-    modeloVendedor3.find((error,data)=>res.json(data)); 
+    Servicios.find((error,data)=>res.json(data)); 
 
 });
 vendedoroute.route("/buscaservicios/:Tipo_servicio").get((req,res)=>{
-    modeloVendedor3.find({Tipo_servicio:req.params.Tipo_servicio},(error,data)=>res.json(data)); 
+    Servicios.find({Tipo_servicio:req.params.Tipo_servicio},(error,data)=>res.json(data)); 
 
 });
 vendedoroute.route("/buscarservicios/:id").get((req,res)=>{
-    modeloVendedor3.findById(req.params.id,(error,data)=>res.json(data)); 
+    Servicios.findById(req.params.id,(error,data)=>res.json(data)); 
 });
 //crear
 vendedoroute.route("/creacionservicios").post((req,res)=>{ //Para crear un nuevo vendedor
-    modeloVendedor3.create(req.body,(error,data)=>res.json(data)); 
+    Servicios.create(req.body,(error,data)=>res.json(data)); 
 
 });
 //borrar
 vendedoroute.route("/borrarservicios/:id").delete((req,res)=>{ //Para crear un nuevo vendedor
-    modeloVendedor3.findByIdAndDelete(req.params.id,(error,data)=>res.json(data)); 
+    Servicios.findByIdAndDelete(req.params.id,(error,data)=>res.json(data)); 
 
 });
 //actualizar
 vendedoroute.route("/actualizarServicios/:id").put((req,res)=>{ //Para actualizar un nuevo vendedor
-    modeloVendedor3.findByIdAndUpdate(req.params.id,{$set:req.body},(error,data)=>res.json(data)); 
+    Servicios.findByIdAndUpdate(req.params.id,{$set:req.body},(error,data)=>res.json(data)); 
 
 });
-//-----------------------ModeloVendedor4--------------
+//-----------------------Ventas--------------
 // consultar
 vendedoroute.route("/consultarventas").get((req,res)=>{
-    modeloVendedor4.find((error,data)=>res.json(data)); 
+    Ventas.find((error,data)=>res.json(data)); 
 
 });
 vendedoroute.route("/buscaventas/:nombre").get((req,res)=>{
-    modeloVendedor4.find({nombre:req.params.nombre},(error,data)=>res.json(data)); 
+    Ventas.find({nombre:req.params.nombre},(error,data)=>res.json(data)); 
 
 });
 vendedoroute.route("/buscarventas/:id").get((req,res)=>{
-    modeloVendedor4.findById(req.params.id,(error,data)=>res.json(data)); 
+    Ventas.findById(req.params.id,(error,data)=>res.json(data)); 
 });
 //crear
 vendedoroute.route("/creacionventas").post((req,res)=>{ //Para crear un nuevo vendedor
-    modeloVendedor4.create(req.body,(error,data)=>res.json(data)); 
+    Ventas.create(req.body,(error,data)=>res.json(data)); 
 
 });
 //borrar
 vendedoroute.route("/borrarventas/:id").delete((req,res)=>{ //Para crear un nuevo vendedor
-    modeloVendedor4.findByIdAndDelete(req.params.id,(error,data)=>res.json(data)); 
+    Ventas.findByIdAndDelete(req.params.id,(error,data)=>res.json(data)); 
 
 });
 //actualizar
 vendedoroute.route("/actualizarVentas/:id").put((req,res)=>{ //Para actualizar un nuevo vendedor
-    modeloVendedor4.findByIdAndUpdate(req.params.id,{$set:req.body},(error,data)=>res.json(data)); 
+    Ventas.findByIdAndUpdate(req.params.id,{$set:req.body},(error,data)=>res.json(data)); 
 
 });
+//--------------------usuarios-----
+vendedoroute.route("/consultarusuarios").get((req,res)=>{
+    usuarios.find((error,data)=>res.json(data)); 
 
+});
+vendedoroute.route("/buscausuarios/:username").get((req,res)=>{
+    usuarios.find({username:req.params.username},(error,data)=>res.json(data)); 
+
+});
+vendedoroute.route("/buscarusuarios/:id").get((req,res)=>{
+    usuarios.findById(req.params.id,(error,data)=>res.json(data)); 
+});
+//crear
+vendedoroute.route("/creacionusuario").post((req,res)=>{ //Para crear un nuevo vendedor
+    usuarios.create(req.body,(error,data)=>res.json(data)); 
+
+});
+//borrar
+vendedoroute.route("/borrarusuarios/:id").delete((req,res)=>{ //Para crear un nuevo vendedor
+    usuarios.findByIdAndDelete(req.params.id,(error,data)=>res.json(data)); 
+});
+//actualizar
+vendedoroute.route("/actualizarUsuarios/:id").put((req,res)=>{ //Para actualizar un nuevo vendedor
+    usuarios.findByIdAndUpdate(req.params.id,{$set:req.body},(error,data)=>res.json(data)); 
+
+});
 module.exports=vendedoroute;
