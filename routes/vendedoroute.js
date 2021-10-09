@@ -69,8 +69,8 @@ vendedoroute.route("/consultarservicios").get((req,res)=>{
     modeloVendedor3.find((error,data)=>res.json(data)); 
 
 });
-vendedoroute.route("/buscaservicios/:nombre").get((req,res)=>{
-    modeloVendedor3.find({nombre:req.params.nombre},(error,data)=>res.json(data)); 
+vendedoroute.route("/buscaservicios/:Tipo_servicio").get((req,res)=>{
+    modeloVendedor3.find({nombre:req.params.Tipo_servicio},(error,data)=>res.json(data)); 
 
 });
 vendedoroute.route("/buscarservicios/:id").get((req,res)=>{
