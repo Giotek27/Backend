@@ -16,4 +16,4 @@ const VendedorNaturalSchema=new Schema({
 
 
 //Convertir a modelo
-module.exports=moongose.model('VendedoresNaturale',VendedorNaturalSchema);
+module.exports=moongose.model('VentasRegistrada',VendedorNaturalSchema);
