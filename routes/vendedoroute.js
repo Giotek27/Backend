@@ -101,7 +101,7 @@ vendedoroute.route("/buscaventas/:nombre").get((req,res)=>{
     modeloVendedor4.find({nombre:req.params.nombre},(error,data)=>res.json(data)); 
 
 });
-vendedoroute.route("/buscaventas/:id").get((req,res)=>{
+vendedoroute.route("/buscarventas/:id").get((req,res)=>{
     modeloVendedor4.findById(req.params.id,(error,data)=>res.json(data)); 
 });
 //crear
