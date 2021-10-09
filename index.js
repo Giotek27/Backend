@@ -3,6 +3,7 @@ let bodyParser=require("body-parser");
 let cors=require("cors");
 let express=require("express");
 require("dotenv").config();
+var auth = require("./routes/auth");
 
 mongoose.Promise=global.Promise;
 mongoose.connect(
@@ -31,6 +32,8 @@ app.use((req,res,next)=>{
     next();
 });
 
+app.use("/api/auth", auth);
+
 
 const vendorapi=require("./routes/vendedoroute");
 app.use("",vendorapi);
@@ -42,3 +45,4 @@ app.listen(app.get("PORT"),()=>{
 //const server=app.listen(process.env.PORT || function(){
     //console.log("Servidor iniciado en el puerto: ",this.address().port, app.settings.env);
 //});
+
