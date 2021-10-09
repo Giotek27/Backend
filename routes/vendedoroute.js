@@ -82,7 +82,7 @@ vendedoroute.route("/creacionservicios").post((req,res)=>{ //Para crear un nuevo
 
 });
 //borrar
-vendedoroute.route("/borrarvendedorJ/:id").delete((req,res)=>{ //Para crear un nuevo vendedor
+vendedoroute.route("/borrarservicios/:id").delete((req,res)=>{ //Para crear un nuevo vendedor
     modeloVendedor3.findByIdAndDelete(req.params.id,(error,data)=>res.json(data)); 
 
 });
