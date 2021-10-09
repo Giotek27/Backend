@@ -70,7 +70,7 @@ vendedoroute.route("/consultarservicios").get((req,res)=>{
 
 });
 vendedoroute.route("/buscaservicios/:Tipo_servicio").get((req,res)=>{
-    modeloVendedor3.find({nombre:req.params.Tipo_servicio},(error,data)=>res.json(data)); 
+    modeloVendedor3.find({Tipo_servicio:req.params.Tipo_servicio},(error,data)=>res.json(data)); 
 
 });
 vendedoroute.route("/buscarservicios/:id").get((req,res)=>{
