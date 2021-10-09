@@ -3,7 +3,7 @@ let bodyParser=require("body-parser");
 let cors=require("cors");
 let express=require("express");
 require("dotenv").config();
-var auth = require("./routes/auth");
+
 
 mongoose.Promise=global.Promise;
 mongoose.connect(
@@ -32,7 +32,7 @@ app.use((req,res,next)=>{
     next();
 });
 
-app.use("/api/auth", auth);
+
 
 
 const vendorapi=require("./routes/vendedoroute");
