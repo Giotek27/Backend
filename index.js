@@ -4,7 +4,6 @@ let cors=require("cors");
 let express=require("express");
 require("dotenv").config();
 
-
 mongoose.Promise=global.Promise;
 mongoose.connect(
     process.env.mongoUrl,
@@ -45,4 +44,3 @@ app.listen(app.get("PORT"),()=>{
 //const server=app.listen(process.env.PORT || function(){
     //console.log("Servidor iniciado en el puerto: ",this.address().port, app.settings.env);
 //});
-
